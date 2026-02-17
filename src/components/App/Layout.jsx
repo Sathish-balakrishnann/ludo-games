@@ -1,6 +1,9 @@
 
 import { Component } from "react";
 import Header from "./Header";
+import classes from './app.module.scss'
+import Footer from "./Footer";
+import { Outlet } from "react-router";
 
 class Layout extends Component {
     constructor(props) {
@@ -9,7 +12,13 @@ class Layout extends Component {
 
     render() {
         return (
-            <Header />
+            <div className={classes.pageContainer}>
+                <Header />
+                <main>
+                    <Outlet />
+                </main>
+                <Footer />
+            </div>
         )
     }
 }

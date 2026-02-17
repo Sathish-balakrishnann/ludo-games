@@ -1,8 +1,7 @@
 import { Component } from "react"
-import './Header.scss'
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-
+import classes from './app.module.scss'
+import { NavLink } from "react-router"
+import logo from "../../assets/images/ludoLogo.jpg"
 
 class Header extends Component {
     constructor(props) {
@@ -11,13 +10,19 @@ class Header extends Component {
 
     render() {
         return (
-            <>
-                <Navbar className="bg-body-tertiary">
-                    <Container>
-                        <Navbar.Brand href="#home">Brand link</Navbar.Brand>
-                    </Container>
-                </Navbar>
-            </>
+            <header className={classes.header}>
+
+                <img src={logo} />
+                <div>
+                    <h2>Ludo </h2>
+                </div>
+
+                <div>
+                    <NavLink to="/"> Home</NavLink>
+                    <NavLink to="/players">Players</NavLink>
+                    <NavLink to="/ludo">Game</NavLink>
+                </div>
+            </header>
         )
     }
 }
