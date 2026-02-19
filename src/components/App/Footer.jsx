@@ -11,12 +11,7 @@ class Footer extends Component {
 
         return (
             <footer className={classes.footer}>
-
-                
-                    <h6>ludogame@gmail.com</h6>
-                    <h6>@2013</h6>
-                    <h6>ludo_game</h6>
-                
+                <h6>&copy; 2013 Copyright: playludo.com</h6>
             </footer>
         )
     }

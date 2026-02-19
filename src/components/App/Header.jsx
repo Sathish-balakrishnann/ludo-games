@@ -12,15 +12,15 @@ class Header extends Component {
         return (
             <header className={classes.header}>
 
-                <img src={logo} />
-                <div>
-                    <h2>Ludo </h2>
+                <div className={classes.title}>
+                    <img src={logo} />
+                    <h2>Ludo</h2>
                 </div>
 
-                <div>
-                    <NavLink to="/"> Home</NavLink>
-                    <NavLink to="/players">Players</NavLink>
-                    <NavLink to="/ludo">Game</NavLink>
+                <div className={classes.navlink}>
+                    <NavLink to="/"> <h5>Home</h5></NavLink>
+                    <NavLink to="/players"><h5>Players</h5></NavLink>
+                    <NavLink to="/ludo"><h5>Game</h5></NavLink>
                 </div>
             </header>
         )
