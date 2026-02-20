@@ -2,7 +2,9 @@ import { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Classes from './players.module.scss'
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import image from '../../assets/images/clovece-nezlob-se.svg'
+import TextInput from "../Common/TextInput";
 
 class PlayersAdd extends Component {
     constructor(props) {
@@ -20,8 +22,7 @@ class PlayersAdd extends Component {
         this.startGame = this.startGame.bind(this)
     }
 
-    handlePlayer1(e) {
-        const value = e.target.value;
+    handlePlayer1(value) {
         this.setState({ player1: value })
     }
     handlePlayer2(e) {
@@ -38,109 +39,53 @@ class PlayersAdd extends Component {
         this.setState({ player4: value })
     }
 
-    startGame(){
+    startGame() {
         alert(
-            this.state.player1+"\n"+
-            this.state.player2+"\n"+
-            this.state.player3+"\n"+
+            this.state.player1 + "\n" +
+            this.state.player2 + "\n" +
+            this.state.player3 + "\n" +
             this.state.player4
         )
     }
     render() {
         return (
-            <article className={Classes.pageContant}>
-                <div>
-                    <h4>Add Players</h4>
-                    <>
-                        <InputGroup size="sm" className="mb-3">
-                            <InputGroup.Text id="inputGroup-sizing-sm">Player 1</InputGroup.Text>
-                            <Form.Control
-                                className={Classes.player1}
-                                value={this.state.player1}
-                                onChange={this.handlePlayer1}
-                                aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm"
-                            />
-                        </InputGroup>
-                        <InputGroup size="sm" className="mb-3">
-                            <InputGroup.Text id="inputGroup-sizing-sm">Player 2</InputGroup.Text>
-                            <Form.Control
-                                className={Classes.player2}
-                                value={this.state.player2}
-                                onChange={this.handlePlayer2}
-                                aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm"
-                            />
-                        </InputGroup>
-                        <InputGroup size="sm" className="mb-3">
-                            <InputGroup.Text id="inputGroup-sizing-sm">Player 3</InputGroup.Text>
-                            <Form.Control
-                                className={Classes.player3}
-                                value={this.state.player3}
-                                onChange={this.handlePlayer3}
-                                aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm"
-                            />
-                        </InputGroup>
-                        <InputGroup size="sm" className="mb-3">
-                            <InputGroup.Text id="inputGroup-sizing-sm">Player 4</InputGroup.Text>
-                            <Form.Control
-                                className={Classes.player4}
-                                value={this.state.player4}
-                                onChange={this.handlePlayer4}
-                                aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm"
-                            />
-                        </InputGroup>
-                        <Button onClick={this.startGame} >Start Game</Button>
+            <Container className={Classes.container}>
+                <div className={Classes.image}>
+                    <img src={image}></img>
+                </div>
+                <div className={Classes.form}>
+                    <h4 className={Classes.title}>ADD PLAYERS</h4>
 
-                    </>
-                </div >
-            </article >
+                    <TextInput
+                        className={Classes.player1}
+                        value={this.state.player1}
+                        handleChange={this.handlePlayer1}
+                        label="Player 1"
+                    />
+                    <TextInput
+                        className={Classes.player2}
+                        value={this.state.player2}
+                        handleChange={this.handlePlayer2}
+                        label="Player 2"
+                    />
+                    <TextInput
+                        className={Classes.player3}
+                        value={this.state.player3}
+                        handleChange={this.handlePlayer3}
+                        label="Player 3"
+                    />
+                    <TextInput
+                        className={Classes.player4}
+                        value={this.state.player4}
+                        handleChange={this.handlePlayer4}
+                        label="Player 4"
+                    />
+
+                    <Button onClick={this.startGame} >Start Game</Button>
+
+                </div>
+            </Container>
         )
     }
 } export default PlayersAdd
 
-
-
-
-
-
-
-
-
-
-
-
-{/* <InputGroup className="mb-3">
-    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-    <Form.Control
-        placeholder="Add Players"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-    />
-</InputGroup>
-<InputGroup className="mb-3">
-    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-    <Form.Control
-        placeholder="Add Players"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-    />
-</InputGroup>
-<InputGroup className="mb-3">
-    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-    <Form.Control
-        placeholder="Add Players"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-    />
-</InputGroup>
-<InputGroup className="mb-3">
-    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-    <Form.Control
-        placeholder="Add Players"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-    />
-</InputGroup> */}
