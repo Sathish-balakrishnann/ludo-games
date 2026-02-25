@@ -1,0 +1,87 @@
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(163, 149, 163);
+
+
+
+
+    .green {
+        display: flex;
+
+        td {
+            border: 2px solid black;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .greenstart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 9rem;
+            height: 9rem;
+            background-color: green;
+        }
+
+        .greenpath {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .greenrow {
+            background-color: green;
+        }
+
+        .triangle {
+            width: 2px;
+            height: 3rem;
+            border-left: 70px solid green;
+            border-right: 0px solid;
+            border-bottom: 43px solid rgb(163, 149, 163);
+            border-top: 43px solid rgb(163, 149, 163);
+        }
+
+        .text {
+            position: relative;
+            right: 66px;
+            bottom: 10px;
+            color: black;
+        }
+    }
+
+    .red {
+        display: flex;
+
+
+        td {
+            border: 2px solid black;
+            width: 1.5rem;
+            height: .5rem;
+        }
+
+        .redpathandstart {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+        .redstart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 9rem;
+            height: 9rem;
+            background-color: red;
+        }
+
+        .redrow{
+            background-color: red;
+        }
+
+
+
+    }
+}

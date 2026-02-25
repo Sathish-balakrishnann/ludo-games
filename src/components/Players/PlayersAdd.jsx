@@ -1,51 +1,68 @@
 import { Component } from "react";
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Classes from './players.module.scss'
 import { Button, Container } from "react-bootstrap";
-import image from '../../assets/images/clovece-nezlob-se.svg'
+import image from '../../../public/playing-ludo-board.webp'
 import TextInput from "../Common/TextInput";
+import PlayerContext from "../../context/PlayerContext";
+
+const fieldConfigs = [{
+    name: "player1",
+    label: "First Player"
+},
+{
+    name: "player2",
+    label: "Second Player"
+},
+{
+    name: "player3",
+    label: "Third Player"
+},
+{
+    name: "player4",
+    label: "Fourth Player"
+}
+]
+
 
 class PlayersAdd extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            players: [],
             player1: "",
             player2: "",
             player3: "",
             player4: ""
         }
-        this.handlePlayer1 = this.handlePlayer1.bind(this)
-        this.handlePlayer2 = this.handlePlayer2.bind(this)
-        this.handlePlayer3 = this.handlePlayer3.bind(this)
-        this.handlePlayer4 = this.handlePlayer4.bind(this)
+        this.handlePlayer = this.handlePlayer.bind(this)
         this.startGame = this.startGame.bind(this)
+        this.renderField = this.renderField.bind(this)
     }
 
-    handlePlayer1(value) {
-        this.setState({ player1: value })
-    }
-    handlePlayer2(e) {
-        const value = e.target.value;
-        this.setState({ player2: value })
-    }
-    handlePlayer3(e) {
-        const value = e.target.value;
-        this.setState({ player3: value })
+    static contextType = PlayerContext
 
-    }
-    handlePlayer4(e) {
-        const value = e.target.value;
-        this.setState({ player4: value })
+    handlePlayer(name) {
+        return (value) => {
+            this.setState({ [name]: value })
+        }
     }
 
     startGame() {
-        alert(
-            this.state.player1 + "\n" +
-            this.state.player2 + "\n" +
-            this.state.player3 + "\n" +
-            this.state.player4
+        this.context.setPlayers(
+            {
+                player1: this.state.player1,
+                player2: this.state.player2,
+                player3: this.state.player3,
+                player4: this.state.player4
+            }
         )
+    }
+    renderField(field) {
+        return (<TextInput
+            value={this.state[field.name]}
+            handleChange={this.handlePlayer(field.name)}
+            label={field.label}
+        />)
     }
     render() {
         return (
@@ -56,30 +73,7 @@ class PlayersAdd extends Component {
                 <div className={Classes.form}>
                     <h4 className={Classes.title}>ADD PLAYERS</h4>
 
-                    <TextInput
-                        className={Classes.player1}
-                        value={this.state.player1}
-                        handleChange={this.handlePlayer1}
-                        label="Player 1"
-                    />
-                    <TextInput
-                        className={Classes.player2}
-                        value={this.state.player2}
-                        handleChange={this.handlePlayer2}
-                        label="Player 2"
-                    />
-                    <TextInput
-                        className={Classes.player3}
-                        value={this.state.player3}
-                        handleChange={this.handlePlayer3}
-                        label="Player 3"
-                    />
-                    <TextInput
-                        className={Classes.player4}
-                        value={this.state.player4}
-                        handleChange={this.handlePlayer4}
-                        label="Player 4"
-                    />
+                    {fieldConfigs.map(this.renderField)}
 
                     <Button onClick={this.startGame} >Start Game</Button>
 

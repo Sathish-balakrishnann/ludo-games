@@ -24,7 +24,7 @@ class TextInput extends Component {
                     onChange={this.onChange}
                     aria-label="Small"
                     aria-describedby="inputGroup-sizing-sm"
-                                    />
+                />
             </InputGroup >
 
         )

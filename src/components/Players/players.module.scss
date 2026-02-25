@@ -19,32 +19,41 @@
          .title {
              color: var(--bs-primary);
          }
+
+         &>:nth-child(2)>input {
+             color: red;
+         }
+
+         &>:nth-child(3)>input {
+             color: green;
+         }
+
+         &>:nth-child(4)>input {
+             color: blue;
+         }
+
+         &>:nth-child(5)>input {
+             color: rgb(192, 19, 163);
+         }
      }
 
      .image {
-        flex-shrink: 1;
-         width: 10rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         // margin-left: 4rem;
+         height: 20rem;
+         width: fit-content;
+
+         .img {
+             // height: 100rem;
+             // width: 5rem;
+         }
+
+         flex-shrink: 1;
+         //  width: 2rem;
      }
 
-    //  span {
-    //      color: var(--bs-primary);
-    //  }
-
-     .player1 {
-         color: red;
-     }
-
-     .player2 {
-         color: green;
-     }
-
-     .player3 {
-         color: blue;
-     }
-
-     .player4 {
-         color: rgb(192, 19, 163);
-     }
 
 
  }
