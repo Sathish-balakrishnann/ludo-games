@@ -3,6 +3,7 @@ import Layout from "./Layout"
 import PlayersAdd from "../Players/PlayersAdd"
 import PlayGame from "../Game/PlayGame"
 import Home from "./Home"
+import LudoBoard from "../LudoBoard/LudoBoard"
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home/>} />
         <Route path="/players" element={<PlayersAdd/>} />
-        <Route path="/ludo" element={<PlayGame/>} />
+        <Route path="/ludo" element={<LudoBoard/>} />
       </Route>
     </Routes>
   )

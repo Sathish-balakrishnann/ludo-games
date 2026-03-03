@@ -9,95 +9,185 @@ class PlayGame extends Component {
     render() {
         return (
             <div className={classes.game}>
-                <h2>full</h2>
-                <div className={classes.green} >
-                    <tr>
-                        <div className={classes.greenstart}>
-                            0
+                <div className={classes.main}>
+                    <div className={classes.greenblue}>
+                        <div className={classes.green} >
+                            <tr>
+                                <div className={classes.greenstart}>
+
+                                </div>
+                                <tr>
+                                    <div className={classes.greenpath}>
+                                        <div>
+                                            <tr>
+                                                <td></td>
+                                                <td className={classes.greenrow}></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td className={classes.greenrow}> </td>
+                                                <td className={classes.greenrow}> </td>
+                                                <td className={classes.greenrow}> </td>
+                                                <td className={classes.greenrow}> </td>
+                                                <td className={classes.greenrow}> </td>
+                                            </tr>
+                                            <tr>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                                <td> </td>
+                                            </tr>
+                                        </div>
+                                        <div className={classes.triangle}>
+                                            <p className={classes.text}> </p>
+                                        </div>
+
+                                    </div>
+                                </tr>
+                            </tr>
                         </div>
-                        <tr>
-                            <div className={classes.greenpath}>
+                        <div className={classes.blue} >
+
+                            <div className={classes.bluepath}>
+
                                 <div>
                                     <tr>
-                                        <td>0</td>
-                                        <td className={classes.greenrow}>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td> </td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td className={classes.greenrow}>1</td>
-                                        <td className={classes.greenrow}>1</td>
-                                        <td className={classes.greenrow}>1</td>
-                                        <td className={classes.greenrow}>1</td>
-                                        <td className={classes.greenrow}>1</td>
+                                        <td> </td>
+                                        <td className={classes.bluerow}> </td>
+                                        <td className={classes.bluerow}> </td>
                                     </tr>
                                     <tr>
-                                        <td>2</td>
-                                        <td>2</td>
-                                        <td>2</td>
-                                        <td>2</td>
-                                        <td>2</td>
-                                        <td>2</td>
+                                        <td> </td>
+                                        <td className={classes.bluerow}> </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> </td>
+                                        <td className={classes.bluerow}> </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> </td>
+                                        <td className={classes.bluerow}> </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> </td>
+                                        <td className={classes.bluerow}> </td>
+                                        <td> </td>
                                     </tr>
                                 </div>
                                 <div className={classes.triangle}>
-                                    <p className={classes.text}>0</p>
+                                    <p className={classes.text}> </p>
                                 </div>
+                            </div>
+                            <div className={classes.bluestart}>
+                            </div>
 
-                            </div>
-                        </tr>
-                    </tr>
-                </div>
-                <div className={classes.red} >
-                    <tr>
-                        <div className={classes.redpathandstart}>
-                            <div className={classes.redstart}>
-                                0
-                            </div>
+                        </div>
+                    </div>
+                    <div className={classes.redyellow}>
+                        <div className={classes.red} >
                             <tr>
-                                <div className={classes.redpath}>
-                                    <div>
-                                        <tr>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr>
-                                            <td className={classes.redrow}>1</td>
-                                            <td className={classes.redrow}>1</td>
-                                            <td className={classes.redrow}>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>2</td>
-                                            <td>2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>2</td>
-                                            <td>2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>2</td>
-                                            <td>2</td>
-                                        </tr>
-                                    </div>
-                                    <div className={classes.triangle}>
-                                        <p className={classes.text}>0</p>
-                                    </div>
+                                <div className={classes.redpathandstart}>
+                                    <div className={classes.redstart}>
 
+                                    </div>
+                                    <tr>
+                                        <div className={classes.redpath}>
+                                            <div className={classes.triangle}>
+                                                <p className={classes.text}> </p>
+                                            </div>
+                                            <div>
+                                                <tr>
+                                                    <td> </td>
+                                                    <td className={classes.redrow}> </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> </td>
+                                                    <td className={classes.redrow}> </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> </td>
+                                                    <td className={classes.redrow}> </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> </td>
+                                                    <td className={classes.redrow}> </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td className={classes.redrow}> </td>
+                                                    <td className={classes.redrow}> </td>
+                                                    <td> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                    </tr>
                                 </div>
                             </tr>
                         </div>
-                    </tr>
+                        <div className={classes.yellow} >
+                            <tr>
+                                <div className={classes.yellowpath}>
+                                    <div className={classes.triangle}>
+                                        <p className={classes.text}> </p>
+                                    </div>
+                                    <div>
+                                        <tr>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+                                            <td className={classes.yellowrow}> </td>
+                                            <td className={classes.yellowrow}> </td>
+                                            <td className={classes.yellowrow}> </td>
+                                            <td className={classes.yellowrow}> </td>
+                                            <td className={classes.yellowrow}> </td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td> </td>
+                                            <td className={classes.yellowrow}> </td>
+                                            <td> </td>
+                                        </tr>
+                                    </div>
+                                </div>
+                                <tr>
+                                    <div className={classes.yellowstart}>
+
+                                    </div>
+                                </tr>
+                            </tr>
+                        </div>
+                    </div>
                 </div>
-                
-
-
             </div >
         )
     }

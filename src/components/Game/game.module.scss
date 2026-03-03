@@ -4,8 +4,24 @@
     align-items: center;
     flex-direction: column;
     background-color: rgb(163, 149, 163);
+    height: 82vh;
 
+    .main {
+        transform: scale(1.2);
 
+    }
+
+    .greenblue {
+        display: flex;
+    }
+
+    .redyellow {
+        display: flex;
+    }
+
+    td {
+        background-color: aliceblue;
+    }
 
 
     .green {
@@ -14,7 +30,7 @@
         td {
             border: 2px solid black;
             width: 1.5rem;
-            height: 1.5rem;
+            height: 1.83rem;
         }
 
         .greenstart {
@@ -22,8 +38,10 @@
             align-items: center;
             justify-content: center;
             width: 9rem;
-            height: 9rem;
+            height: 11rem;
             background-color: green;
+            border: 2px solid black;
+
         }
 
         .greenpath {
@@ -38,16 +56,59 @@
         .triangle {
             width: 2px;
             height: 3rem;
-            border-left: 70px solid green;
-            border-right: 0px solid;
-            border-bottom: 43px solid rgb(163, 149, 163);
-            border-top: 43px solid rgb(163, 149, 163);
+            border-left: 38px solid green;
+            border-bottom: 45px solid red;
+            border-top: 40px solid blue;
         }
 
         .text {
             position: relative;
-            right: 66px;
+            right: 30px;
             bottom: 10px;
+            color: black;
+        }
+    }
+
+    .blue {
+        display: flex;
+
+        td {
+            border: 2px solid black;
+            width: 1.5rem;
+            height: 1.83rem;
+        }
+
+        .bluepath {
+            display: flex;
+            flex-direction: column;
+            margin-left: -38px;
+        }
+
+        .bluestart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 9rem;
+            height: 11rem;
+            background-color: blue;
+            border: 2px solid black;
+        }
+
+        .bluerow {
+            background-color: blue;
+        }
+
+        &.triangle {
+            width: 2px;
+            height: 3rem;
+            border-left: 38px solid green;
+            border-bottom: 45px red solid;
+            border-top: 40px solid blue;
+        }
+
+        .text {
+            position: relative;
+            right: -30px;
             color: black;
         }
     }
@@ -59,7 +120,7 @@
         td {
             border: 2px solid black;
             width: 1.5rem;
-            height: .5rem;
+            height: 1.83rem;
         }
 
         .redpathandstart {
@@ -73,15 +134,83 @@
             align-items: center;
             justify-content: center;
             width: 9rem;
-            height: 9rem;
+            height: 11rem;
             background-color: red;
+            border: 2px solid black;
         }
 
-        .redrow{
+        .redrow {
             background-color: red;
+        }
+        .redpath{
+            display: flex;
+            flex-direction: column;
+            margin-top: -41px;
+        }
+
+        &.triangle {
+            width: 2px;
+            height: 3rem;
+            border-left: 38px solid green;
+            border-bottom: 45px red solid;
+            border-top: 40px solid blue;
+        }
+
+        .text {
+            position: relative;
+            right: -30px;
+            height: 22px;
+            color: black;
         }
 
 
+    }
 
+    .yellow {
+        display: flex;
+        flex-direction: row;
+
+        td {
+            border: 2px solid black;
+            width: 1.5rem;
+            height: 1.83rem;
+
+        }
+
+        .yellowstart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 9rem;
+            height: 11rem;
+            background-color: yellow;
+            border: 2px solid black;
+        }
+
+        .yellowpath {
+            display: flex;
+            margin-top: -88px;
+            margin-left: -35px;
+        }
+
+        .yellowrow {
+            background-color: yellow;
+        }
+
+        .triangle {
+            width: 2px;
+            height: 3rem;
+            border-left: 0px solid green;
+            border-right: 35px solid yellow;
+            border-bottom: 45px solid red;
+            border-top: 40px solid blue;
+        }
+
+        .text {
+            position: relative;
+            right: -20px;
+            bottom: 10px;
+            color: black;
+        }
     }
 }

@@ -7,12 +7,12 @@ import { PlayersProvider } from './context/PlayerContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    
-    <HashRouter> 
+
+    <HashRouter>
       <PlayersProvider>
-      <App />
+        <App />
       </PlayersProvider>
     </HashRouter>
 
-  </StrictMode>,
+  </StrictMode>
 )
