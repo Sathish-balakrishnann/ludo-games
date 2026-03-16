@@ -3,11 +3,153 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 37rem;
     background-color: rgb(163, 149, 163);
-    height: 82vh;
 
     .main {
-        transform: scale(1.2);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "z1 z2"
+            "z4 z3";
+        gap: 4.5rem;
 
+
+        @for $i from 1 through 4 {
+            &>:nth-child(#{$i}) {
+                grid-area: z#{$i};
+                transform: rotate(#{($i - 1)*90}deg); // (i-1)*90
+            }
+
+        }
+
+    }
+}
+
+.green {
+    background-color: green;
+
+}
+
+.blue {
+    background-color: blue;
+
+}
+
+.yellow {
+    background-color: yellow;
+
+}
+
+.red {
+    background-color: red;
+}
+
+.zoneContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .zoneHome {
+        border: 1px solid black;
+        height: 9rem;
+        width: 9rem;
+
+        .whiteDiv {
+            display: grid;
+            grid-template-areas:
+            "p1 p2"
+            "p3 p4";
+            justify-content: space-evenly;
+            height: 6.5rem;
+            width: 6.5rem;
+            border-radius: 20px;
+            background-color: aliceblue;
+            margin: 20px 0 0 20px;
+
+            .homePiecePosition {
+                height: 2rem;
+                width: 2rem;
+                margin-top: 10px;
+                background-color: red;
+                border-radius: 100%;
+            }
+        }
+
+
+
+    }
+
+
+
+    .zonePath {
+        width: 100%;
+        height: 50%;
+        bottom: -4.5rem;
+        display: grid;
+        position: absolute;
+        grid-template-columns: auto auto auto auto auto auto;
+        background: inherit;
+        border: 1px solid black;
+        padding: 0px 0px;
+
+        .path {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border: 0.5px solid black;
+            background-color: aliceblue;
+
+            &.safeZone {
+                background-color: inherit;
+
+            }
+
+            &.mountain {
+                background-size: 80%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url("../../assets/images/star.svg");
+            }
+
+        }
+
+
+        @for $i from 1 through 4 {
+            .zone__#{$i} {
+                transform: rotate(#{(5 - $i)*90}deg); //(5-i)*90
+            }
+        }
+    }
+
+
+
+
+    .zoneFinal {
+        position: absolute;
+        background-color: inherit;
+        bottom: -4.5rem;
+        right: -4.5rem;
+        height: 50%;
+        width: 50%;
+        clip-path: polygon(50% 50%, 0 0, 0 100%);
+
+    }
+
+    .text {
+        margin-top: 1.5rem;
+        margin-left: 0.35rem;
+        color: black;
+    }
+}
+
+.piece {
+    &::before {
+        content: "\F3E7";
+        font-family: "bootstrap-icons";
+        color: green;
     }
 }
