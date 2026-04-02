@@ -2,7 +2,7 @@ import { Component } from "react"
 import classes from './app.module.scss'
 import { NavLink } from "react-router"
 import logo from "../../assets/images/ludoLogo.jpg"
-import PlayerContext from "../../context/PlayerContext"
+import GameContext from "../../context/GameContext"
 import Badge from 'react-bootstrap/Badge';
 
 class Header extends Component {
@@ -10,7 +10,7 @@ class Header extends Component {
 
         super(props)
     }
-    static contextType = PlayerContext
+    static contextType = GameContext
 
     render() {
         const player1 = this.context.players.player1

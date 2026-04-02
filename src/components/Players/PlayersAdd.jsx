@@ -3,7 +3,7 @@ import Classes from './players.module.scss'
 import { Button, Container } from "react-bootstrap";
 import image from '../../../public/playing-ludo-board.webp'
 import TextInput from "../Common/TextInput";
-import PlayerContext from "../../context/PlayerContext";
+import GameContext from "../../context/GameContext";
 
 const fieldConfigs = [{
     name: "player1",
@@ -39,7 +39,8 @@ class PlayersAdd extends Component {
         this.renderField = this.renderField.bind(this)
     }
 
-    static contextType = PlayerContext
+    static contextType = GameContext
+    
 
     handlePlayer(name) {
         return (value) => {

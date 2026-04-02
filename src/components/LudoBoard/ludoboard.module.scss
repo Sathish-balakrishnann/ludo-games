@@ -38,7 +38,7 @@
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: darkgoldenrod;
 
 }
 
@@ -55,32 +55,29 @@
         border: 1px solid black;
         height: 9rem;
         width: 9rem;
-
-        .whiteDiv {
-            display: grid;
-            grid-template-areas:
+        display: grid;
+        grid-template-areas:
             "p1 p2"
             "p3 p4";
-            justify-content: space-evenly;
-            height: 6.5rem;
-            width: 6.5rem;
-            border-radius: 20px;
+        place-items: center;
+        padding: 1rem;
+
+        .homePiecePosition {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            width: 2.5rem;
             background-color: aliceblue;
-            margin: 20px 0 0 20px;
-
-            .homePiecePosition {
-                height: 2rem;
-                width: 2rem;
-                margin-top: 10px;
-                background-color: red;
-                border-radius: 100%;
-            }
+            border-radius: 100%;
         }
-
-
-
     }
 
+    @for $i from 1 through 4 {
+        .zoneHome__#{$i} {
+            transform: rotate(#{(5 - $i)*90}deg); //(5-i)*90
+        }
+    }
 
 
     .zonePath {
@@ -96,6 +93,8 @@
 
         .path {
             display: flex;
+            flex-wrap: wrap;
+            container-type: size;
             align-items: center;
             justify-content: center;
             width: 24px;
@@ -106,6 +105,16 @@
             &.safeZone {
                 background-color: inherit;
 
+                .placeholder {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                    height: 80%;
+                    background-color: white;
+                    border-radius: 50%;
+                }
             }
 
             &.mountain {
@@ -116,7 +125,6 @@
             }
 
         }
-
 
         @for $i from 1 through 4 {
             .zone__#{$i} {
@@ -146,10 +154,36 @@
     }
 }
 
-.piece {
+:global(.piece) {
+    line-height: 1px;
+
     &::before {
+        // flex: 1 1 auto;
+        font-size: clamp(0.5rem, 6cqi, 0.9rem);
         content: "\F3E7";
         font-family: "bootstrap-icons";
+    }
+
+    &:global(.green) {
         color: green;
     }
+
+    &:global(.blue) {
+        color: blue;
+    }
+
+    &:global(.yellow) {
+        color: darkgoldenrod;
+    }
+
+    &:global(.red) {
+        color: red;
+    }
+}
+
+.pathId {
+    position: absolute;
+    font-size: 7px;
+    opacity: 0.7;
+    //display: none;
 }
